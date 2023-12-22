@@ -9,12 +9,13 @@ import { GithubIcon, Logo } from "@/components/icons/icons";
 import { Button } from "@nextui-org/button";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { user_login } from "./api/soteria/user/user_api";
+import { user_login } from "./api/soteria/user/Login";
 import { LandingNavbar } from "@/components/navbar/landingnavbar";
 //import helloworld from "./api/mongo/helloworld";
+import connect from "./api/mongo/dbConnect";
 
 export default function Home() {
- 
+  connect();
   return (
     <div>
       <LandingNavbar />

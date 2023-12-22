@@ -193,6 +193,36 @@ export const SearchIcon = (props: IconSvgProps) => (
 	</svg>
 );
 
+
+interface PhoneIconProps {
+	size?: number;
+	width?: number | string;
+	height?: number | string;
+  }
+  
+  export const PhoneIcon: React.FC<PhoneIconProps> = ({
+	size = 24,
+	width,
+	height,
+	...props
+  }) => (
+	<svg
+	  xmlns="http://www.w3.org/2000/svg"
+	  width={size || width}
+	  height={size || height}
+	  viewBox="0 0 24 24"
+	  fill="none"
+	  stroke="#001F3F" // Navy blue color
+	  strokeWidth="2"
+	  strokeLinecap="round"
+	  strokeLinejoin="round"
+	  {...props}
+	>
+	  <path d="M23 1L17 1M7 1L1 1M17 1V7M17 23L23 23M17 17L23 17M1 7L7 7M1 17L7 17M1 23L7 23M1 1L1 7M7 23L7 17" />
+	</svg>
+  );
+  
+
 export const EditIcon: React.FC<IconSvgProps> = ({
 	size = 24,
 	width,

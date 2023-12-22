@@ -12,7 +12,6 @@ import { Button } from "@nextui-org/button";
 import { Kbd } from "@nextui-org/kbd";
 import { Link } from "@nextui-org/link";
 import { Input } from "@nextui-org/input";
-import UserInformation from "../../app/login/userinformation";
 import { link as linkStyles } from "@nextui-org/theme";
 import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
@@ -27,6 +26,7 @@ import {
 } from "@/components/icons/icons";
 import React, { ReactElement, ReactNode,useState,useEffect } from "react";
 import { Logo } from "@/components/icons/icons";
+import LoggedUser from "../user/user";
 
 type DashboardNavbarProps = {
   children: ReactNode;
@@ -81,7 +81,7 @@ export const DashboardNavbar = ({
         >
           <NavbarItem>
             <Link  href="#">
-              Accounts
+           My Churches
             </Link>
           </NavbarItem>
           <NavbarItem isActive>
@@ -118,7 +118,7 @@ export const DashboardNavbar = ({
           </NavbarItem>
           <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
           <NavbarItem className="hidden md:flex">
-            <UserInformation />
+           <LoggedUser/>
           </NavbarItem>
         </NavbarContent>
       </NextUINavbar>

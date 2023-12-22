@@ -2,7 +2,6 @@
 import React from "react";
 import { DashboardNavbar } from "@/components/navbar/dashboardnavbar";
 import Footer from "@/components/footer/Footer";
-//import Sidebar from "@/components/sidebar/sidebar";
 import { Providers } from "../providers";
 import { SidebarWrapper } from "@/components/sidebar/sidebar";
 import { useState, useEffect } from "react";
@@ -18,7 +17,7 @@ function Dashboardlayout({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <section className="flex" suppressHydrationWarning>
+    <section className="flex">
       <div style={{ marginRight: "10px" }}>
         <SidebarWrapper />
       </div>

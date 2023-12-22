@@ -2,7 +2,7 @@
 import { Logo } from "@/components/icons/icons"
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { user_login } from "../api/soteria/user/user_api";
+import { userLogin } from "../api/soteria/user/Login";
 import { Link } from "@nextui-org/link";
 import { Button } from "@nextui-org/button";
 import {Input} from "@nextui-org/input";
@@ -22,7 +22,7 @@ export default function Login() {
   
       try {
         // Call user_login function passing email and password
-        const request = await user_login(email, password);
+        const request = await userLogin(email, password);
   
         //console.log(request.data.data);
   

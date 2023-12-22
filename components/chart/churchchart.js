@@ -1,10 +1,11 @@
-// components/ChurchChart.js
 "use client";   
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import churchData from './churchData';
 
 const ChurchChart = () => {
+  const chartRef = useRef(null); // Add this line
+
   useEffect(() => {
     const ctx = document.getElementById('churchChart').getContext('2d');
 
@@ -15,7 +16,11 @@ const ChurchChart = () => {
     const growthCounts = churchGrowthData.map((data) => data.count);
     const appCounts = churchAppData.map((data) => data.count);
 
-    new Chart(ctx, {
+    if (chartRef.current) { // Add this block
+      chartRef.current.destroy();
+    }
+
+    chartRef.current = new Chart(ctx, { // Modify this line
       type: 'line',
       data: {
         labels: years,
@@ -25,14 +30,6 @@ const ChurchChart = () => {
             data: growthCounts,
             borderColor: 'blue',
             backgroundColor: 'rgba(0, 0, 255, 0.1)',
-            borderWidth: 2,
-            fill: true,
-          },
-          {
-            label: 'Churches on App',
-            data: appCounts,
-            borderColor: 'green',
-            backgroundColor: 'rgba(0, 255, 0, 0.1)',
             borderWidth: 2,
             fill: true,
           },

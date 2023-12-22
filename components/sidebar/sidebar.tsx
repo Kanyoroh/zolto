@@ -21,8 +21,9 @@ import { useSidebarContext } from "../layout/layout-context";
 import { ChangeLogIcon } from "../icons/sidebar/changelog-icon";
 import { useRouter,usePathname } from "next/navigation";
 import { useState, useEffect} from "react";
-import UserInformation from "@/app/login/userinformation";
-//import UserInformation from "@/app/login/userinformation";
+import LoggedUser from "../user/user";
+
+
 
 export const SidebarWrapper = () => {
   const router = useRouter();
@@ -59,32 +60,32 @@ export const SidebarWrapper = () => {
               icon={<HomeIcon />}
               isActive={pathname === "/dashboard"}
               href="/"
-            />
+            />             
             <SidebarMenu title="Main Menu">
-              <SidebarItem
-                isActive={pathname === "/accounts"}
-                title="Our Accounts"
-                icon={<AccountsIcon />}
-                href="accounts"
-              />
-              <SidebarItem
+            <SidebarItem
                 isActive={pathname === "/payments"}
-                title="Church Payments"
+                title="Add Church"
                 icon={<PaymentsIcon />}
               />
+              <SidebarItem
+                isActive={pathname === "/accounts"}
+                title="My Accounts"
+                icon={<AccountsIcon />}
+                href="accounts"
+              />             
               <CollapseItems
                 icon={<BalanceIcon />}
                 items={["Banks Accounts", "Credit Cards", "Loans"]}
-                title="Balances"
+                title="Accounts"
               />
               <SidebarItem
                 isActive={pathname === "/customers"}
-                title="Sales People"
+                title="My Sales People"
                 icon={<CustomersIcon />}
               />
               <SidebarItem
                 isActive={pathname === "/products"}
-                title="Soteria Expenses"
+                title="My Expenses"
                 icon={<ProductsIcon />}
               />
               <SidebarItem
@@ -93,22 +94,9 @@ export const SidebarWrapper = () => {
                 icon={<ReportsIcon />}
               />
             </SidebarMenu>
-
-            <SidebarMenu title="General">
-              <SidebarItem
-                isActive={pathname === "/developers"}
-                title="Directors"
-                icon={<DevIcon />}
-              />
-              <SidebarItem
-                isActive={pathname === "/settings"}
-                title="Settings"
-                icon={<SettingsIcon />}
-              />
-            </SidebarMenu>
           </div>
           <div className={Sidebar.Footer()}>               
-          <UserInformation/>
+          <LoggedUser />
           </div>
         </div>
       </div>
