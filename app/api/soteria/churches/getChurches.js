@@ -5,7 +5,7 @@ import getTokenFromLocalStorage from "../user/GetTokenLocalStorage";
 async function getChurches() {
   try {
     const token = await getTokenFromLocalStorage();
-    console.log("Token:", token);
+    //console.log("Token:", token);
 
     const response = await axios.get(
       "https://api.soteriapp.org/api/v1/churches/",

@@ -59,13 +59,14 @@ export const SidebarWrapper = () => {
               title="Dashboard"
               icon={<HomeIcon />}
               isActive={pathname === "/dashboard"}
-              href="/"
+              href="/dashboard"
             />             
             <SidebarMenu title="Main Menu">
             <SidebarItem
-                isActive={pathname === "/payments"}
+                isActive={pathname === "/dashboard/churches"}
                 title="Add Church"
                 icon={<PaymentsIcon />}
+              href="/dashboard/churches"
               />
               <SidebarItem
                 isActive={pathname === "/accounts"}

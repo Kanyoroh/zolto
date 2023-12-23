@@ -25,6 +25,6 @@
       "@mongoapi/*": ["./app/api/mongo/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/page.js", "app/login/page.js", "components/tables/nextuitable.js", "components/user/user.tsx", "app/login/userinformation.js", "app/api/soteria/user/checktoken.js", "components/sidebar/sidebar.tsx", "app/dashboard/page.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/page.js", "app/login/page.js", "components/tables/nextuitable.js", "components/user/user.tsx", "app/login/userinformation.js", "app/api/soteria/user/checktoken.js", "components/sidebar/sidebar.tsx", "app/dashboard/page.js", "app/dashboard/churches/page.js"],
   "exclude": ["node_modules"]
 }
