@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./input.css";
 import Lottie from "lottie-react";
-import animationData from "./icons/phone.json";
-import loading from "./icons/loading.json";
-import map from "./icons/map.json";
+import animationData from "../icons/table/phone.json";
+import loading from "../icons/table/loading.json";
+import map from "../icons/table/map.json";
+import Image from "next/image";
 
 const sendEmail = email => {
   window.location.href = `mailto:${email}`;
@@ -44,9 +44,9 @@ function KanyoroTable({
     switch (columnsUI[columnKey]) {
       case "user":
         return (
-          <th
+          <div
             scope="row"
-            class="flex  px-6 py-4 text-gray-900 wrap dark:text-white"
+            className="flex  px-6 py-4 text-gray-900 wrap dark:text-white"
           >
             <img
               className="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
@@ -59,7 +59,7 @@ function KanyoroTable({
                 neil.sims@flowbite.com
               </div>
             </div>
-          </th>
+          </div>
         );
       case "role":
         return (
@@ -111,10 +111,10 @@ function KanyoroTable({
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div className="flex items-center">
+            <div className="flex ">
               <Lottie
                 animationData={animationData}
-                style={{ width: 50, height: 50 }}
+                style={{ width: 30, height: 30 }}
               />
               <div className="ml-2">
                 <p className="text-base font-semibold">
@@ -127,8 +127,13 @@ function KanyoroTable({
       case "map":
         return (
           <a href={cellValue} target="_blank" rel="noopener noreferrer">
-            <div className="flex items-center">
-              <Lottie animationData={map} style={{ width: 40, height: 40 }} />
+            <div className="flex ">
+              <Image
+                src="/map.png"
+                width={30}
+                height={30}
+                alt="Picture of the author"
+              />
             </div>
           </a>
         );
@@ -179,8 +184,7 @@ function KanyoroTable({
 
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg border border-gray-300">
-  <div className="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-900">
-
+      <div className="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-900">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>

@@ -9,7 +9,7 @@ import { CardAgents } from "./card-agents";
 import { CardTransactions } from "./card-transactions";
 import ChurchChart from "../chart/churchchart";
 import Link from "next/link";
-import KanyoroTable from "../table/table";
+import KanyoroTable from "@/components/table/index";
 import getUserFromLocalStorage from "@/app/api/soteria/user/GetUserLocalStorage";
 
 const columns = {

@@ -1,7 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import LoggedUser from "../../components/user/user";
-import NextUITable from "@/components/tables/nextuitable";
 import getChurches from "@/app/api/soteria/churches/GetChurches";
 import { DashboardContent } from "@/components/home/content"; // Assuming this is the DashboardContent component
 
